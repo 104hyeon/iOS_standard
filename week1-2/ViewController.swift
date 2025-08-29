@@ -8,27 +8,35 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var countLabel: UILabel!
     
-    @IBOutlet weak var didTabBotton: UIButton!
+    @IBOutlet weak var countButton: UIButton!
     
-    let counting = Counting()
-    
+    let counter = Counter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func didTapBotton(_ sender: Any) {
-        counting.addCount()
-        countLabel.text = "\(counting.count)"
-        
+    @IBAction func excuteCounter(_ sender: Any) {
+        counter.addCount()
+        countLabel.text = "\(counter.number)"
         
         
     }
     
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
 }
-

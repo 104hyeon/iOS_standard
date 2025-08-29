@@ -16,38 +16,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ccf-vb-D8b">
-                                <rect key="frame" x="175.66666666666666" y="268" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wx-ca-oNY">
+                                <rect key="frame" x="175.66666666666666" y="318" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4f-Fu-KZl">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAa-g0-0TC">
                                 <rect key="frame" x="159" y="649" width="75" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                 <connections>
-                                    <action selector="didTapBotton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zcU-5R-7ar"/>
+                                    <action selector="excuteCounter:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cwS-qY-APT"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ccf-vb-D8b" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="Jwv-Kb-x8D"/>
-                            <constraint firstItem="Ccf-vb-D8b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LDA-Za-BL4"/>
-                            <constraint firstItem="O4f-Fu-KZl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZST-AQ-HmP"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="O4f-Fu-KZl" secondAttribute="bottom" constant="100" id="fVJ-Cn-uJc"/>
+                            <constraint firstItem="hAa-g0-0TC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ECW-JC-jpo"/>
+                            <constraint firstItem="9wx-ca-oNY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="d7c-Pd-9jZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="hAa-g0-0TC" secondAttribute="bottom" constant="100" id="tqk-xv-y3w"/>
+                            <constraint firstItem="9wx-ca-oNY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="zc1-aa-15o"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="countLabel" destination="Ccf-vb-D8b" id="Lea-lB-tlw"/>
-                        <outlet property="didTabBotton" destination="O4f-Fu-KZl" id="6hu-5Q-Ohn"/>
+                        <outlet property="countButton" destination="hAa-g0-0TC" id="8aa-u2-NKq"/>
+                        <outlet property="countLabel" destination="9wx-ca-oNY" id="M8A-PE-gTR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-27"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
     <resources>
