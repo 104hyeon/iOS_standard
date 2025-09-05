@@ -14,7 +14,7 @@ class FirstViewController: UIViewController {
     // 1. 테이블뷰 객체를 만든다
     let tableView = UITableView()
     // 3.  데이터 만들기
-    let datas = ["옐로 페이스", "혼모노", "농담", "생각에 관한 생각", "더 시스템"]
+    var datas = ["옐로 페이스", "혼모노", "농담", "생각에 관한 생각", "더 시스템"]
     
 
     override func viewDidLoad() {
@@ -40,10 +40,9 @@ class FirstViewController: UIViewController {
         tableView.snp.makeConstraints { $0.edges.equalToSuperview()
         }
     }
-    
 }
 
-extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
+extension FirstViewController: UITableViewDelegate, UITableViewDataSource, FirstTVCellDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return datas.count
@@ -55,8 +54,22 @@ extension FirstViewController: UITableViewDelegate, UITableViewDataSource {
         
         let data = datas[indexPath.row]
         cell.configure(data: data)
+        cell.delegate = self // delegate 지정해줌
         
         return cell
     }
+    
+    // 버튼 누르면 datas 목록에 추가됨
+    func didTapButton(data: String) {
+        datas.append(data)
+        tableView.reloadData()
+    }
+    
+    // 셀 눌렀을 때 datas 대신 "셀 추가"
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        datas.append("셀 추가")
+        tableView.reloadData()
+    }
+    
 }
 
