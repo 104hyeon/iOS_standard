@@ -1,22 +1,5 @@
 /*
- UI/레이아웃 요구사항
- 뷰컨트롤러명 : PasswordViewController
 
- passwordLabel
- 화면 정가운데 정렬
-
- passwordTextField
- 높이 50
- 좌우 30 인셋
- passwordLabel 위에 위치하며 간격 10
- borderStyle은 roundedRect
- password라고 입력하고 passwordButton을 누르면 passwordLabel text를 "성공"으로 변경
-
- passwordButton
- passwordLabel 밑에 간격 10 위치, center Label과 맞춤
- Title: 입력
- Width : 100, height : 50
- backgroundColor : red
  */
 
 import UIKit
@@ -26,6 +9,7 @@ class PasswordViewController: UIViewController {
     let passwordLabel = UILabel()
     let passwordTextField = UITextField()
     let passwordButton = UIButton()
+    let vaildateor = PasswordValidator()
     
     let password: String = "password"
 
@@ -43,7 +27,7 @@ class PasswordViewController: UIViewController {
         passwordLabel.textAlignment = .center
         
         passwordTextField.borderStyle = .roundedRect
-
+        passwordTextField.autocapitalizationType = .none
         passwordButton.setTitle("입력", for: .normal)
         passwordButton.backgroundColor = .red
         passwordButton.addTarget(self, action: #selector(didTabButton), for: .touchUpInside)
@@ -78,11 +62,28 @@ class PasswordViewController: UIViewController {
     
     @objc
     func didTabButton() {
-        let _: Bool = passwordTextField.text == self.password
-        passwordLabel.text = "성공"
-        
+
+        do {
+            let input = passwordTextField.text ?? ""
+            let inputVaild = try vaildateor.validate(with: input)
+            if inputVaild {
+                passwordLabel.text = "성공"
+            }
+        } catch {
+                guard let modalError = error as? PasswordError else { return }
+                errorAlert(modalError)
+            }
+        }
+    
+    func errorAlert(_ modalError: PasswordError) {
+        let alert = UIAlertController(title: modalError.errorTitle, message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default))
+        present(alert, animated: true)
     }
-
-
+        
 }
+    
+
+
+
 
